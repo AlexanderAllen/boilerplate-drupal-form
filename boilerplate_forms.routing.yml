@@ -1,0 +1,10 @@
+boilerplate_forms.steps:
+  path: "/steps/{step}"
+  defaults:
+    _controller: '\Drupal\boilerplate_forms\Controller\Controller::form'
+    _title_callback: '\Drupal\boilerplate_forms\Controller\Controller::formTitle'
+    step: "step_1"
+  requirements:
+    _permission: "access content"
+  options:
+    no_cache: "TRUE"

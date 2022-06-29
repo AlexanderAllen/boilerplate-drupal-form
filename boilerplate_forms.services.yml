@@ -1,0 +1,36 @@
+services:
+  boilerplate_forms.service:
+    class: Drupal\boilerplate_forms\Service\FormStepsService
+    arguments:
+    [
+      # Drupal Core Services.
+      # See https://api.drupal.org/api/drupal/core%21core.services.yml/8.9.x
+      '@tempstore.private', '@session_manager', '@current_user', '@settings'
+
+      # Custom Services.
+      '@boilerplate_forms.steps.base'
+      '@boilerplate_forms.steps.step_1',
+      '@boilerplate_forms.steps.step_2',
+      '@boilerplate_forms.steps.step_3',
+      '@boilerplate_forms.steps.review',
+    ]
+
+  boilerplate_forms.service.base:
+    class: Drupal\boilerplate_forms\Service\Steps\Base
+    arguments: ['@tempstore.private', '@session_manager', '@current_user', '@settings']
+
+  boilerplate_forms.service.step_1:
+    class: Drupal\boilerplate_forms\Service\Steps\Step1
+    arguments: ['@tempstore.private', '@session_manager', '@current_user', '@settings']
+
+  boilerplate_forms.service.step_2:
+    class: Drupal\boilerplate_forms\Service\Steps\Step2
+    arguments: ['@tempstore.private', '@session_manager', '@current_user', '@settings']
+
+  boilerplate_forms.service.step_3:
+    class: Drupal\boilerplate_forms\Service\Steps\Step3
+    arguments: ['@tempstore.private', '@session_manager', '@current_user', '@settings']
+
+  boilerplate_forms.service.review:
+    class: Drupal\boilerplate_forms\Service\Steps\Review
+    arguments: ['@tempstore.private', '@session_manager', '@current_user', '@settings']

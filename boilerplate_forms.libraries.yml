@@ -1,0 +1,12 @@
+boilerplate-forms:
+  version: 1.x
+  css:
+    theme:
+      css/boilerplate_forms.main.css: {}
+  js:
+    js/boilerplate_forms.main.js: {}
+    js/boilerplate_forms.library.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings

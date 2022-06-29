@@ -1,0 +1,9 @@
+name: 'Boilerplate Forms'
+type: module
+description: 'Boilerplate for multi-step form application.'
+core: 8.x
+
+dependencies:
+  - some_api_client: some_api_client
+
+package: 'Boilerplates'

@@ -1,0 +1,71 @@
+<?php
+
+/**
+ * @file
+ * Contains boilerplate_forms.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_preprocss().
+ */
+function boilerplate_forms_preprocess(&$vars, $hook = '') {
+  // If the current page is ...:
+  if ($hook == 'questionaire__affair__debonnair') {
+    // Preprocess some page variables.
+  }
+}
+
+/**
+ * Implements hook_help().
+ */
+function boilerplate_forms_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.boilerplate_forms':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Enables my module.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function boilerplate_forms_theme($existing, $type, $theme, $path) {
+  $items = [];
+
+  $items = [
+    // Initial form.
+    'form__block__entrypoint' => [
+      'render element' => 'form',
+      'path' => $path . '/templates/block',
+    ],
+    // Form progress percenet indicator.
+    'form__block__progress' => [
+      'variables' => [
+        'data' => NULL,
+      ],
+      'path' => $path . '/templates/block',
+    ],
+    // Navigation elements.
+    'form__block__navigation' => [
+      'variables' => [
+        'data' => NULL,
+      ],
+      'path' => $path . '/templates/block',
+    ],
+    // Confirm form submission.
+    'form__page__success' => [
+      'variables' => [
+        'data' => NULL,
+      ],
+      'path' => $path . '/templates/pages',
+    ],
+  ];
+
+  return $items;
+}
